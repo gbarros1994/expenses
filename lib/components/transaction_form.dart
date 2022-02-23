@@ -18,13 +18,13 @@ class TransactionForm extends StatelessWidget {
         child: Column(
           children: [
             TextField(
-              controller: valueController,
+              controller: titleController,
               decoration: InputDecoration(
                 labelText: 'Título',
               ),
             ),
             TextField(
-              controller: titleController,
+              controller: valueController,
               decoration: InputDecoration(
                 labelText: 'Valor (R\$)',
               ),
