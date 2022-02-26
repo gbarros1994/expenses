@@ -1,4 +1,4 @@
-# expenses_v1
+# Curso Flutter (Udemy) --
 
 A new Flutter project.
 
