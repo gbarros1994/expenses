@@ -59,7 +59,7 @@ final _transactions = [
     showModalBottomSheet(
       context: context, 
       builder: (ctx) {
-        return TransactionForm((p0, p1) => 1,);
+        return TransactionForm(_addTransaction);
       }
     );
   }
