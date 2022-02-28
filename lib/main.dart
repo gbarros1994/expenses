@@ -52,6 +52,9 @@ final _transactions = [
       setState(() {
         _transactions.add(newTransaction);
       });
+
+      // CLOSE MODAL
+      Navigator.of(context);
     }
 
 
