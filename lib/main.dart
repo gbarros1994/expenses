@@ -54,7 +54,7 @@ final _transactions = [
       });
 
       // CLOSE MODAL
-      Navigator.of(context);
+      Navigator.of(context).pop();
     }
 
 
