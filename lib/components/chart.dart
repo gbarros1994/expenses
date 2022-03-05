@@ -1,7 +1,38 @@
 import 'package:flutter/material.dart';
+import '../models/transaction.dart';
+import 'package:intl/intl.dart';
 
 class Chart extends StatelessWidget {
-  const Chart({ Key? key }) : super(key: key);
+
+  final List<Transaction> recenteTransaction;
+
+  Chart(this.recenteTransaction);
+
+  List<Map<String, Object>> get groupedTransactions {
+    return List.generate(7, (index) {
+
+      final weekDay = DateTime.now().subtract(
+        Duration(days: index),
+      );
+
+      double totalSum = 0.0;
+
+      for (var i = 0; i < recenteTransaction.length; i++) {
+        bool sameDay = recenteTransaction[i].date.day == weekDay.day;
+        bool sameMonth = recenteTransaction[i].date.month == weekDay.month;
+        bool sameYear = recenteTransaction[i].date.year == weekDay.year;
+      
+        if (sameDay && sameMonth && sameYear) {
+          totalSum += recenteTransaction[i].value;
+        }
+      }
+
+      return {
+        'day': DateFormat.E().format(weekDay)[0], 
+        'value': totalSum
+      };
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
