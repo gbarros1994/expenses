@@ -1,4 +1,4 @@
-# -- Curso Flutter (Udemy) --
+# -- Curso Flutter (Udemy)
 
 A new Flutter project.
 
