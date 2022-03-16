@@ -69,6 +69,18 @@ final List<Transaction> _transactions = [
       value: 211.76, 
       date: DateTime.now().subtract(Duration(days: 4)),
     ),
+    Transaction(
+      id: 't3', 
+      title: 'Cartão de crédito', 
+      value: 211.76, 
+      date: DateTime.now().subtract(Duration(days: 4)),
+    ),
+    Transaction(
+      id: 't4', 
+      title: 'Lanche', 
+      value: 211.76, 
+      date: DateTime.now().subtract(Duration(days: 4)),
+    ),
   ];
 
   List<Transaction> get _recentTranscations {
