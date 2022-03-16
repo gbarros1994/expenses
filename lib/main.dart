@@ -66,20 +66,20 @@ final List<Transaction> _transactions = [
     Transaction(
       id: 't2', 
       title: 'Conta de Luz', 
-      value: 211.76, 
+      value: 400.76, 
       date: DateTime.now().subtract(Duration(days: 4)),
     ),
     Transaction(
       id: 't3', 
       title: 'Cartão de crédito', 
       value: 211.76, 
-      date: DateTime.now().subtract(Duration(days: 4)),
+      date: DateTime.now().subtract(Duration(days: 5)),
     ),
     Transaction(
       id: 't4', 
       title: 'Lanche', 
       value: 211.76, 
-      date: DateTime.now().subtract(Duration(days: 4)),
+      date: DateTime.now().subtract(Duration(days: 6)),
     ),
   ];
 
