@@ -43,7 +43,7 @@ class TransactionList extends StatelessWidget {
             child: ListTile(
               leading: CircleAvatar(
                 radius: 30,
-                child: Padding(
+                child: Container(
                   padding: const EdgeInsets.all(6),
                   child: FittedBox(child: Text('R\$${tr.value}')),
                 ),
