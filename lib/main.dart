@@ -76,6 +76,12 @@ final List<Transaction> _transactions = [];
       Navigator.of(context).pop();
     }
 
+    _removeTransaction(String id) {
+      setState(() {
+        _transactions.removeWhere((tr) => tr.id == id);
+      });
+    }
+
 
   _opentransactionFormModal(BuildContext context) {
     showModalBottomSheet(
@@ -105,7 +111,7 @@ final List<Transaction> _transactions = [];
         child: Column(
           children: [
             Chart(_recentTranscations),
-            TransactionList(_transactions),
+            TransactionList(_transactions, _removeTransaction),
           ],
         ),
       ),
