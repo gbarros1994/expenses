@@ -96,11 +96,7 @@ final List<Transaction> _transactions = [];
   Widget build(BuildContext context) {
     final appBar = AppBar(
         title: Text(
-          'Despesas Pessoais',
-          style: TextStyle(
-            fontFamily: 'Quicksand', 
-            fontSize: 20 * MediaQuery.of(context).textScaleFactor
-          ),
+          'Despesas Pessoais'
         ),
         actions: [
           IconButton(
