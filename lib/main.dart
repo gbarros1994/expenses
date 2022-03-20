@@ -97,7 +97,10 @@ final List<Transaction> _transactions = [];
     final appBar = AppBar(
         title: Text(
           'Despesas Pessoais',
-          style: TextStyle(fontFamily: 'Quicksand'),
+          style: TextStyle(
+            fontFamily: 'Quicksand', 
+            fontSize: 20 * MediaQuery.of(context).textScaleFactor
+          ),
         ),
         actions: [
           IconButton(
@@ -115,11 +118,11 @@ final List<Transaction> _transactions = [];
         child: Column(
           children: [
             Container(
-              height: availabelHeight * 0.4,
+              height: availabelHeight * 0.3,
               child: Chart(_recentTranscations),
             ),
             Container(
-              height: availabelHeight * 0.6,
+              height: availabelHeight * 0.7,
               child: TransactionList(_transactions, _removeTransaction),
             ),
           ],
