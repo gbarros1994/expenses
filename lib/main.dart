@@ -114,11 +114,11 @@ final List<Transaction> _transactions = [];
         child: Column(
           children: [
             Container(
-              height: availabelHeight * 0.3,
+              height: availabelHeight * 0.30,
               child: Chart(_recentTranscations),
             ),
             Container(
-              height: availabelHeight * 0.7,
+              height: availabelHeight * 0.70,
               child: TransactionList(_transactions, _removeTransaction),
             ),
           ],
