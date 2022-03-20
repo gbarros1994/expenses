@@ -94,6 +94,9 @@ final List<Transaction> _transactions = [];
 
   @override
   Widget build(BuildContext context) {
+
+    final availabelHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -110,8 +113,14 @@ final List<Transaction> _transactions = [];
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Chart(_recentTranscations),
-            TransactionList(_transactions, _removeTransaction),
+            Container(
+              height: availabelHeight * 0.4,
+              child: Chart(_recentTranscations),
+            ),
+            Container(
+              height: availabelHeight * 0.6,
+              child: TransactionList(_transactions, _removeTransaction),
+            ),
           ],
         ),
       ),
