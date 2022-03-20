@@ -94,11 +94,7 @@ final List<Transaction> _transactions = [];
 
   @override
   Widget build(BuildContext context) {
-
-    final availabelHeight = MediaQuery.of(context).size.height;
-
-    return Scaffold(
-      appBar: AppBar(
+    final appBar = AppBar(
         title: Text(
           'Despesas Pessoais',
           style: TextStyle(fontFamily: 'Quicksand'),
@@ -109,7 +105,12 @@ final List<Transaction> _transactions = [];
             icon: Icon(Icons.add)
           )
         ],
-      ),
+      );
+    final availabelHeight = MediaQuery.of(context).size.height
+    - appBar.preferredSize.height - MediaQuery.of(context).padding.top;
+
+    return Scaffold(
+      appBar: appBar,
       body: SingleChildScrollView(
         child: Column(
           children: [
