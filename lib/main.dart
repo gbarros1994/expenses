@@ -145,7 +145,7 @@ bool _showChart = false;
             ),
             if (!_showChart || !isLandscape)
             Container(
-              height: availabelHeight * 0.70,
+              height: availabelHeight * (isLandscape ? 1 : 0.7),
               child: TransactionList(_transactions, _removeTransaction),
             ),
           ],
