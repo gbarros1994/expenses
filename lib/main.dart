@@ -104,9 +104,17 @@ bool _showChart = false;
         ),
         actions: [
           IconButton(
+            onPressed: () {
+              setState(() {
+                _showChart = !_showChart;
+              });
+            }, 
+            icon: Icon(_showChart ? Icons.list : Icons.pie_chart)
+          ),
+          IconButton(
             onPressed: () => _opentransactionFormModal(context), 
             icon: Icon(Icons.add)
-          )
+          ),
         ],
       );
     final availabelHeight = MediaQuery.of(context).size.height
