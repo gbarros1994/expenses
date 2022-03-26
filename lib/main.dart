@@ -103,16 +103,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
     final actions = [
       if (isLandscape)
-        IconButton(
-            onPressed: () {
+        _getIconButton(
+            _showChart ? Icons.list : Icons.show_chart,
+           () {
               setState(() {
                 _showChart = !_showChart;
               });
             },
-            icon: Icon(_showChart ? Icons.list : Icons.show_chart)),
-      IconButton(
-          onPressed: () => _opentransactionFormModal(context),
-          icon: Icon(Icons.add)),
+      ),
+      _getIconButton(
+          Icons.add,
+          () => _opentransactionFormModal(context)
+      ),
     ];
 
   final PreferredSizeWidget appBar = Platform.isIOS
