@@ -96,6 +96,8 @@ bool _showChart = false;
 
   @override
   Widget build(BuildContext context) {
+    bool isLandscape = MediaQuery.of(context).orientation == Orientation.landscape;
+
     final appBar = AppBar(
         title: Text(
           'Despesas Pessoais'
@@ -115,6 +117,7 @@ bool _showChart = false;
       body: SingleChildScrollView(
         child: Column(
           children: [
+            if (isLandscape)
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -126,11 +129,12 @@ bool _showChart = false;
                 }),
               ],
             ),
-            _showChart ? 
+            if (_showChart || !isLandscape)
             Container(
               height: availabelHeight * 0.30,
               child: Chart(_recentTranscations),
-            ) :
+            ),
+            if (!_showChart || !isLandscape)
             Container(
               height: availabelHeight * 0.70,
               child: TransactionList(_transactions, _removeTransaction),
