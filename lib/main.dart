@@ -104,43 +104,43 @@ class _MyHomePageState extends State<MyHomePage> {
     final actions = [
       if (isLandscape)
         _getIconButton(
-            _showChart ? Icons.list : Icons.show_chart,
-           () {
-              setState(() {
-                _showChart = !_showChart;
-              });
-            },
-      ),
-      _getIconButton(
-          Platform.isIOS ? CupertinoIcons.add : Icons.add,
-          () => _opentransactionFormModal(context)
-      ),
+          _showChart ? Icons.list : Icons.show_chart,
+          () {
+            setState(() {
+              _showChart = !_showChart;
+            });
+          },
+        ),
+      _getIconButton(Platform.isIOS ? CupertinoIcons.add : Icons.add,
+          () => _opentransactionFormModal(context)),
     ];
 
-  final PreferredSizeWidget appBar = Platform.isIOS
-    ? CupertinoNavigationBar(
-        middle: Text('despesas pessoais'),
-        trailing: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: actions,
-        ) as PreferredSizeWidget, //parse da classe
-      )
-    : AppBar(
-        title: Text(
-          'Despesas pessoais',
-          style: TextStyle(
-            fontSize: 20 * mediaQuery.textScaleFactor,
-          ),
-        ),
-        actions: actions,
-      ) as PreferredSizeWidget; 
+    final PreferredSizeWidget appBar = Platform.isIOS
+        ? CupertinoNavigationBar(
+            middle: Text('despesas pessoais'),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: actions,
+            ) as PreferredSizeWidget, //parse da classe
+          )
+        : AppBar(
+            title: Text(
+              'Despesas pessoais',
+              style: TextStyle(
+                fontSize: 20 * mediaQuery.textScaleFactor,
+              ),
+            ),
+            actions: actions,
+          ) as PreferredSizeWidget;
 
     final availabelHeight = mediaQuery.size.height -
         appBar.preferredSize.height -
         mediaQuery.padding.top;
 
-    final bodyPage = SingleChildScrollView(
+    final bodyPage = SafeArea(
+        child: SingleChildScrollView(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // if (isLandscape)
           // Row(
@@ -169,7 +169,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
         ],
       ),
-    );
+    ));
 
     return Platform.isIOS
         ? CupertinoPageScaffold(navigationBar: appBar, child: bodyPage)
