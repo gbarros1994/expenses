@@ -103,13 +103,14 @@ bool _showChart = false;
           'Despesas Pessoais'
         ),
         actions: [
+          if (isLandscape)
           IconButton(
             onPressed: () {
               setState(() {
                 _showChart = !_showChart;
               });
             }, 
-            icon: Icon(_showChart ? Icons.list : Icons.pie_chart)
+            icon: Icon(_showChart ? Icons.list : Icons.show_chart)
           ),
           IconButton(
             onPressed: () => _opentransactionFormModal(context), 
