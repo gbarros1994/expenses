@@ -3,6 +3,7 @@ import 'package:expenses_v1/components/chart.dart';
 import 'package:expenses_v1/components/transaction_form.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'dart:io';
 import 'components/transaction_form.dart';
 import 'components/transaction_list.dart';
 import '../models/transaction.dart';
@@ -133,7 +134,10 @@ bool _showChart = false;
             //   mainAxisAlignment: MainAxisAlignment.center,
             //   children: [
             //     Text('Exibir Gráfico'),
-            //     Switch(value: _showChart, onChanged: (value) {
+            //     Switch.adaptive(
+            //       activeColor: Theme.of(context).accentColor,
+            //       value: _showChart,
+            //       onChanged: (value) {
             //       setState(() {
             //         _showChart = value;
             //       });
@@ -153,7 +157,9 @@ bool _showChart = false;
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: Platform.isIOS 
+      ? Container()
+      : FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () => _opentransactionFormModal(context), 
       ),
