@@ -96,7 +96,7 @@ bool _showChart = false;
 
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = mediaQuery;
+    final mediaQuery = MediaQuery.of(context);
 
     bool isLandscape = mediaQuery.orientation == Orientation.landscape;
 
