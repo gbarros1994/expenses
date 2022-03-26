@@ -96,7 +96,9 @@ bool _showChart = false;
 
   @override
   Widget build(BuildContext context) {
-    bool isLandscape = MediaQuery.of(context).orientation == Orientation.landscape;
+    final mediaQuery = mediaQuery;
+
+    bool isLandscape = mediaQuery.orientation == Orientation.landscape;
 
     final appBar = AppBar(
         title: Text(
@@ -118,8 +120,8 @@ bool _showChart = false;
           ),
         ],
       );
-    final availabelHeight = MediaQuery.of(context).size.height
-    - appBar.preferredSize.height - MediaQuery.of(context).padding.top;
+    final availabelHeight = mediaQuery.size.height
+    - appBar.preferredSize.height - mediaQuery.padding.top;
 
     return Scaffold(
       appBar: appBar,
