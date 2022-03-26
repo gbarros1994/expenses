@@ -112,7 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
       ),
       _getIconButton(
-          Icons.add,
+          Platform.isIOS ? CupertinoIcons.add : Icons.add,
           () => _opentransactionFormModal(context)
       ),
     ];
