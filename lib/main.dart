@@ -140,7 +140,7 @@ bool _showChart = false;
             // ),
             if (_showChart || !isLandscape)
             Container(
-              height: availabelHeight * (isLandscape ? 0.7 : 0.30),
+              height: availabelHeight * (isLandscape ? 0.8 : 0.3),
               child: Chart(_recentTranscations),
             ),
             if (!_showChart || !isLandscape)
