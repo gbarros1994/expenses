@@ -126,18 +126,18 @@ bool _showChart = false;
       body: SingleChildScrollView(
         child: Column(
           children: [
-            if (isLandscape)
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Exibir Gráfico'),
-                Switch(value: _showChart, onChanged: (value) {
-                  setState(() {
-                    _showChart = value;
-                  });
-                }),
-              ],
-            ),
+            // if (isLandscape)
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: [
+            //     Text('Exibir Gráfico'),
+            //     Switch(value: _showChart, onChanged: (value) {
+            //       setState(() {
+            //         _showChart = value;
+            //       });
+            //     }),
+            //   ],
+            // ),
             if (_showChart || !isLandscape)
             Container(
               height: availabelHeight * (isLandscape ? 0.7 : 0.30),
