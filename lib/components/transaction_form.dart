@@ -94,11 +94,9 @@ class _TransactionFormState extends State<TransactionForm> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  RaisedButton(
-                    child: Text('Nova Transação'),
-                    color: Theme.of(context).primaryColor,
-                    textColor: Colors.white,
-                    onPressed: _submitForm,
+                  AdaptativeButton(
+                    label: 'Nova Transação',
+                    onPressed: _submitForm(),
                   ),
                 ],
               )
