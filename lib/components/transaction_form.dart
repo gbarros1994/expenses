@@ -57,10 +57,10 @@ class _TransactionFormState extends State<TransactionForm> {
                 selectedDate: _selectedDate,
                 onDateChanged: (newDate) {
                   setState(() {
-                    _selectedDate = newDate
+                    _selectedDate = newDate;
                   });
                 },
-              )
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
